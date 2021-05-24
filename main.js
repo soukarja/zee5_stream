@@ -33,38 +33,60 @@ request.onload = function () {
         document.querySelector('#contentBox').innerHTML = "No Search Results Found on Zee5";
         return;
     }
-
+    var genreTxt = "";
     data["all"].forEach((movie) => {
       // Log each movie's title
-      var genreTxt = "";
-      try{
-      movie.genre.forEach((item)=>{
-        if (genreTxt != ""){
-            genreTxt = genreTxt + ", ";
+      
+    //   try{
+    //   movie.genre.forEach((item, index)=>{
+    //     if (genreTxt != ""){
+    //         genreTxt = genreTxt + ", ";
+    //     }
+    //     genreTxt = genreTxt + String(item);
+    //   });
+    // }
+    
+    // catch(err){
+    //     genreTxt = movie.genre;
+    // }
+    for (var i=0; i<movie.genre.length; i++){
+        if (genreTxt.includes(movie.genre[i].id)){
+            continue;
         }
-        genreTxt = genreTxt + item;
-      });
+        if (genreTxt != ""){
+                    genreTxt = genreTxt + ", ";
+                }
+                genreTxt = genreTxt + String(movie.genre[i].id);
     }
-    catch(err){
-        genreTxt = movie.genre;
-    }
+    // console.log(movie);
+    // console.log(movie.genre[0].id);
       var actorsTxt = "";
 
-      try{
-      movie.actors.forEach((item)=>{
-        if (actorsTxt != ""){
-            actorsTxt = actorsTxt + ", ";
-        }
-        actorsTxt = actorsTxt + item;
-      });}
-      catch(err){
-          actorsTxt = movie.actors;
-      }
+    //   for (var i=0; i<movie.actors.length; i++){
+    //     if (actorsTxt.includes(movie.actors[i].id)){
+    //         continue;
+    //     }
+    //     if (actorsTxt!= ""){
+    //                 actorsTxt =actorsTxt + ", ";
+    //             }
+    //             actorsTxt= actorsTxt + String(movie.actors[i].id);
+    // }
+
+    //   try{
+    //   movie.actors.forEach((item)=>{
+    //     if (actorsTxt != ""){
+    //         actorsTxt = actorsTxt + ", ";
+    //     }
+    //     actorsTxt = actorsTxt + item;
+    //   });}
+    //   catch(err){
+    //       actorsTxt = movie.actors;
+    //   }
 
     //   console.log(movie.title);
     createContainer(title=movie.title, 
-                        genre=movie.genreTxt,
-                        actors=movie.actorsTxt,
+                        genre=genreTxt,
+                        actors=actorsTxt,
                         link="https://old-dawn-04ee.soukarja.workers.dev/"+movie.id,
                         picture=movie.image_url,
                         showType=movie.asset_subtype,
@@ -90,7 +112,7 @@ function createContainer(title, genre, actors, link, picture, showType, cost){
     <span class="showPrice">`+cost+`</span></div>
 
     <p>Genre: <span class="genre">`+genre+`</span></p>
-    <p>Actors: <span class="actors">`+actors+`</span></p>
+    <!--<p>Actors: <span class="actors">`+actors+`</span></p>-->
     <br>
 
     <a href="`+link+`" class="streamBtn">Stream Now</a>

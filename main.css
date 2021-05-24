@@ -27,8 +27,20 @@ header span{
     color: #eee;
 }
 
-header h1, header span a{
+header h1, header span a, footer a p{
     color: #fff;
+}
+
+footer a p{
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+footer a{
+    text-decoration: none;
+    text-align: center;
+    color: rgb(255, 238, 0);
+    font-size: 1.4rem;
 }
 
 header div{
@@ -95,6 +107,7 @@ header div input::placeholder{
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: #000;
+    text-transform: capitalize;
 }
 
 #contentBox .showBox .content .heading span.showType{
