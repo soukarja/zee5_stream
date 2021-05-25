@@ -213,7 +213,7 @@ function initialize(){
     {
         document.querySelector('#backbtn').style.display = "unset";
     }
-    if (location.pathname=="/tvshow.html")
+    if (location.pathname.split('/').pop()=="tvshow.html")
     {
         loadTvShows();
     }
