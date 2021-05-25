@@ -16,6 +16,13 @@ header{
     font-family: 'Poppins', sans-serif;
     background: #000;
 }
+header h1{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
 header h1 span{
     font-family: 'Pattaya', sans-serif;
     color: #00dcff;
@@ -177,6 +184,34 @@ body{
 hr{
     margin-bottom: 10px;
 }
+
+#backbtn{
+    color: #fff;
+    font-size: 3rem;
+    position: absolute;
+    left: 30px;
+    background: #000;
+    z-index: 9;
+    border-radius: 50%;
+    display: none;
+    top: 10px;
+    cursor: pointer;
+}
+.showName{
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-align: center;
+}
+.seasonNo, .desc{
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+
+
 @media (max-width: 720px){
     #contentBox .showBox img{
         width: 50vw;
@@ -184,5 +219,8 @@ hr{
     }
     #contentBox .showBox .content .heading{
         display: block;
+    }
+    #backbtn{
+        left: 10px;
     }
 }
