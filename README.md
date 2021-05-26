@@ -10,7 +10,7 @@
 * Can stream Premium Content
 * Directly Search for Shows/Movies or paste Link
 * Updated in Real Time
-* Adjustable Video Quality uptp 4K
+* Adjustable Video Quality upto 4K
 
 
 ## <a href="https://github.com/soukarja">Developed by Soukarja Dutta (Follow if you liked my work)</a>
